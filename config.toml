@@ -3,11 +3,17 @@
 # will load this and create express routes based on the keys and
 # redirect to the value.
 #
+# You can use express paramters as you would normally. They will
+# be injected into the redirect url as expected.
+#
 # The "default" redirect is used as a fallback. If none is
 # provided, then the server will return a standard express
 # 404 response.
 #
 [redirects]
-default="https://hazdryx.me"
 "/fiverr"="https://www.fiverr.com/hazdryx"
 "/fiverr-cli"="https://www.fiverr.com/hazdryx/code-a-custom-nodejs-cli"
+
+"/fake/:var"="https://fake.url/:var"
+
+default="https://hazdryx.me"

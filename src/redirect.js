@@ -9,7 +9,12 @@ debug.enabled = true;
  */
 module.exports = function redirect(to) {
   return (req, res) => {
-    debug('Redirecting: %s => %s', req.url, to);
-    res.redirect(to);
+    let _to = to;
+    Object.keys(req.params).forEach(param => {
+      _to = _to.replace(':' + param, req.params[param]);
+    });
+    
+    debug('Redirecting: %s => %s', req.url, _to);
+    res.redirect(_to);
   }
 };

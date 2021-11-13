@@ -20,22 +20,40 @@ Setting up your redirection server is simple; modify your `config.toml` to have 
 
 ```toml
 #
-# All redirects are placed here. When a server is booting up it
-# will load this and create express routes based on the keys and
-# redirect to the value.
+# Config file version.
 #
-# You can use express paramters as you would normally. They will
-# be injected into the redirect url as expected.
+version=2
 #
 # The "default" redirect is used as a fallback. If none is
 # provided, then the server will return a standard express
 # 404 response.
 #
-[redirects]
+default="https://hazdryx.me"
+
+#
+# All redirects are placed here. When a server is booting up it
+# will load this and create express routes based on the keys and
+# redirect to the value.
+#
+[[redirects]]
+#
+# The "hostname" allows you to control on which host the redirects 
+# take affect. This accepts a wildcard at the start and end of the
+# hostname and defaults to "*".
+#
+hostname="rd.*"
+#
+# These are the redirects for the specified hostname.
+#
 "/fiverr"="https://www.fiverr.com/hazdryx"
 "/fiverr-cli"="https://www.fiverr.com/hazdryx/code-a-custom-nodejs-cli"
-
 "/fake/:var"="https://fake.url/:var"
 
-default="https://hazdryx.me"
+#
+# GitHub redirect example.
+#
+[[redirects]]
+hostname="git.*"
+default="https://github.com/hazdryx"
+"/:repo"="https://github.com/hazdryx/:repo"
 ```

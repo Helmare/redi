@@ -2,11 +2,7 @@
 An [Express](https://expressjs.com/) redirect server, ready to fork and use on your domain.
 
 ## Setup
-This repo is setup to run a redirect server right out of the box and plays well with *continuous deployment* services. Just fork the repo and tell your platform of choice to auto-deploy from the fork.
-
-The master branch contains the latest stable version of the server, while version branches (etc. `v1`) have previous stable versions. When setting up auto-deployment, select a version by choosing which branch to auto-deploy from.
-
-After selecting a version, update the `config.toml` on that branch for your fork. Look at the **Configuration** section for more information.
+This repo is setup to run a redirect server right out of the box and plays well with *continuous deployment* services. Just fork the repo and tell your platform of choice to auto-deploy from the fork. Then update the `config.toml` on your fork to your specifications. An example config is provided in the [configuration](#configuration) section.
 
 ### Local Server
 To run a local server, clone the forked repository and run the following commands:
@@ -16,8 +12,6 @@ npm start
 ```
 
 ## Configuration
-Setting up your redirection server is simple; modify your `config.toml` to have all your redirects.
-
 ```toml
 #
 # Config file version.
@@ -47,13 +41,20 @@ hostname="rd.*"
 #
 "/fiverr"="https://www.fiverr.com/hazdryx"
 "/fiverr-cli"="https://www.fiverr.com/hazdryx/code-a-custom-nodejs-cli"
-"/fake/:var"="https://fake.url/:var"
 
 #
 # GitHub redirect example.
 #
 [[redirects]]
 hostname="git.*"
+#
+# Redirects can contain a default as well and is specific to that
+# host.
+#
 default="https://github.com/hazdryx"
+#
+# Using ':' creates a paramter in your URL that will be transfered
+# to the redirect.
+#
 "/:repo"="https://github.com/hazdryx/:repo"
 ```

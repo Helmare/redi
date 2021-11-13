@@ -1,11 +1,10 @@
 {
   "name": "@hazdryx/redi",
-  "version": "0.2.1",
+  "version": "2.0.1",
   "description": "A basic redirect server.",
   "main": "src/index.js",
   "scripts": {
-    "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
   "repository": {
     "type": "git",

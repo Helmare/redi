@@ -4,7 +4,7 @@ An [Express](https://expressjs.com/) redirect server, ready to fork and use on y
 ## Setup
 This repo is setup to run a redirect server right out of the box and plays well with *continuous deployment* services. Just fork the repo and tell your platform of choice to auto-deploy from the fork.
 
-The master branch contains the latest stable version of the server, while version branches (etc. `v0.1.0`) have previous stable versions. When setting up auto-deployment, select a version by choosing which branch to auto-deploy from.
+The master branch contains the latest stable version of the server, while version branches (etc. `v1`) have previous stable versions. When setting up auto-deployment, select a version by choosing which branch to auto-deploy from.
 
 After selecting a version, update the `config.toml` on that branch for your fork. Look at the **Configuration** section for more information.
 

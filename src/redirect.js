@@ -14,7 +14,7 @@ module.exports = function redirect(to) {
       _to = _to.replace(':' + param, req.params[param]);
     });
     
-    debug('Redirecting: %s => %s', req.url, _to);
+    debug('Redirecting: %s://%s%s => %s', req.protocol, req.headers.host, req.url, _to);
     res.redirect(_to);
   }
 };

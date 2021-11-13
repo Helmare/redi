@@ -25,7 +25,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "helmet": "^4.6.0",
-    "toml": "^3.0.0"
+    "toml": "^3.0.0",
+    "wildcard": "^2.0.0"
   },
   "devDependencies": {
     "debug": "^2.6.9"

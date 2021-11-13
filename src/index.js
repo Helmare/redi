@@ -1,7 +1,7 @@
 const config = require('./config');
 const express = require('express');
-const hostRouter = require('./host-router');
-const redirect = require('./redirect');
+const hostRouter = require('./core/host-router');
+const redirect = require('./core/redirect');
 const debug = require('debug')('redi');
 debug.enabled = true;
 

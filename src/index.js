@@ -1,8 +1,3 @@
-/**
- * @typedef {object} RediConfig
- * @property {object} redirects
- * @property {string} redirects.default
- */
 const config = require('./config.js');
 const express = require('express');
 const redirect = require('./redirect');

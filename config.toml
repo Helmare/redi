@@ -1,4 +1,9 @@
 #
+# Config file version (1 by default).
+#
+version=1
+
+#
 # All redirects are placed here. When a server is booting up it
 # will load this and create express routes based on the keys and
 # redirect to the value.

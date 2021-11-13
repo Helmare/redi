@@ -10,30 +10,28 @@ const app = express();
 app.use(require('helmet')());
 
 config.redirects.forEach(redi => {
-  debug('Building host: %s', redi.hostname);
   const router = hostRouter(redi.hostname);
+
+  // Install host routes.
   Object.keys(redi).forEach(path => {
     if (path == 'default' || path == 'hostname') return; // Ignore default.
   
-    debug('Installing redirect: %s => %s', path, redi[path]);
+    debug('Installing redirect: %s%s => %s', redi.hostname, path, redi[path]);
     router.all(path, redirect(redi[path]));
   });
+
+  // Install host default.
+  if (redi.default) {
+    debug('Installing redirect: %s/* => %s', redi.hostname, redi.default);
+    app.use(redirect(redi.default));
+  }
+
   app.use(router);
-  debug ('Installing host: %s', redi.hostname);
 });
-debug('Finished installing hosts.');
-
-// // Setup redirects
-// Object.keys(config.redirects).forEach(path => {
-//   if (path == "default") return; // Ignore default.
-
-//   debug('Installing redirect: %s => %s', path, config.redirects[path]);
-//   app.all(path, redirect(config.redirects[path]));
-// });
 
 // Fallback
 if (config.default) {
-  debug('Installing global redirect: * => %s', config.default);
+  debug('Installing redirect: * => %s', config.default);
   app.use(redirect(config.default));
 }
 

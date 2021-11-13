@@ -23,7 +23,7 @@ config.redirects.forEach(redi => {
   // Install host default.
   if (redi.default) {
     debug('Installing redirect: %s/* => %s', redi.hostname, redi.default);
-    app.use(redirect(redi.default));
+    router.use(redirect(redi.default));
   }
 
   app.use(router);

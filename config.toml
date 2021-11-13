@@ -26,12 +26,19 @@ hostname="rd.*"
 #
 "/fiverr"="https://www.fiverr.com/hazdryx"
 "/fiverr-cli"="https://www.fiverr.com/hazdryx/code-a-custom-nodejs-cli"
-"/fake/:var"="https://fake.url/:var"
 
 #
 # GitHub redirect example.
 #
 [[redirects]]
 hostname="git.*"
+#
+# Redirects can contain a default as well and is specific to that
+# host.
+#
 default="https://github.com/hazdryx"
+#
+# Using ':' creates a paramter in your URL that will be transfered
+# to the redirect.
+#
 "/:repo"="https://github.com/hazdryx/:repo"

@@ -20,7 +20,7 @@ default="https://hazdryx.me"
 # take affect. This accepts a wildcard at the start and end of the
 # hostname and defaults to "*".
 #
-hostname="rd.*"
+hostname="rd.hazdryx.me/*"
 #
 # These are the redirects for the specified hostname.
 #
@@ -32,7 +32,7 @@ hostname="rd.*"
 # GitHub redirect example.
 #
 [[redirects]]
-hostname="git.*"
+hostname="git.hazdryx.me/*"
 #
 # Redirects can contain a default as well and is specific to that
 # host.
@@ -43,3 +43,10 @@ default="https://github.com/hazdryx"
 # to the redirect.
 #
 "/:repo"="https://github.com/hazdryx/:repo"
+
+#
+# Twitch redirects
+#
+[[redirects]]
+hostname="happiishade.tv/*"
+default="https://twitch.tv/hapiishade"

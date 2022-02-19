@@ -50,3 +50,4 @@ default="https://github.com/hazdryx"
 [[redirects]]
 hostname="happiishade.tv/*"
 default="https://twitch.tv/happiishade"
+"/discord"="https://discord.gg/BfWs7Q7UhM"
